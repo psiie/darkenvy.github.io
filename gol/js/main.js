@@ -1,5 +1,7 @@
 var gridSize = 60;
 var generation = 0;
+var live;
+var buffer;
 
 function Board() {
   this.grid = [];
@@ -127,11 +129,14 @@ function setBrowserSize(live, buffer) {
 // On Doc Ready
 $(document).ready(function() {
   var playing = null;
+  // $(".select2").select2({
+  //   // minimumResultsForSearch: Infinity
+  // });
 
   // Board initialization. Two boards: live & buffer. Buffer is the next generation
-  var live = new Board();
+  live = new Board();
   live.initEmpty();
-  var buffer = new Board();
+  buffer = new Board();
   buffer.initEmpty();
   buffer.commit();
 

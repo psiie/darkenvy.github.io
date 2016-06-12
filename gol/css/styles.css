@@ -18,12 +18,19 @@ body .row {
   text-align: center;
 }
 
+.select2 {
+  min-width: 300px;
+}
+
 .btn {
   /*margin-left: 20px;*/
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+.btn.btn-primary {
+  margin-right: 20px;
+}
 
 .primary {
   /*border: 1px solid blue;*/
