@@ -82,11 +82,18 @@ body .row {
 }
 
 /* Custom, iPhone Retina */ 
-/*@media only screen and (max-width : 320px) {
-  .primary {
-    width: 220px;
+@media only screen and (max-width : 320px) {
+  body .row {
+    width: 360px;
   }
-}*/
+  .primary {
+    width: 360px;
+  }
+  .primary div {
+  width: 35px;
+  height: 35px;
+  }
+}
 
 
 
