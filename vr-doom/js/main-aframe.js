@@ -34,12 +34,12 @@ AFRAME.registerComponent('spawner', {
     //   y: position.y,
     //   z: position.z
     // }
-    console.log('POSITION: ', position)
+    // console.log('POSITION: ', position)
     entity.setAttribute('position', position);
     entity.setAttribute('mixin', this.data.mixin);
     entity.addEventListener('loaded', function () {
       entityRotation = entity.getComputedAttribute('rotation');
-      console.log('ANGLE: ', pitch, yaw, roll)
+      // console.log('ANGLE: ', pitch, yaw, roll)
       // entity.setAttribute('rotation', {
       //   x: entityRotation.x + rotation.x,
       //   y: entityRotation.y + rotation.y,
