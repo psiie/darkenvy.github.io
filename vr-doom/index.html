@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping</title>
+    <!-- <meta name="description" content="Shopping - A-Frame"> -->
+    <!-- <link rel="stylesheet" href="vendor/demo.css"> -->
+
+    <!-- Tracking & Tools -->
+    <script src="vendor/picoModal-2.3.0.min.js"></script>
+    <script src="vendor/tracking-min.js"></script>
+    <script src="vendor/dat.gui.min.js"></script>
+    <script src="vendor/stats.min.js"></script>
+    <script src="vendor/color_camera_gui.js"></script>
+    <!-- A-Frame Materials -->
+    <script src="vendor/aframe.js"></script>
+    <!-- <script src="https://rawgit.com/ngokevin/aframe-layout-component/master/dist/aframe-layout-component.min.js"></script> -->
+    <!-- <script src="https://rawgit.com/ngokevin/aframe-template-component/master/dist/aframe-template-component.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/nunjucks/2.3.0/nunjucks.min.js"></script> -->
+    <!-- Other -->
+    <script src="js/main.js"></script>
+    <script src="js/main-aframe.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+
+  <body>
+    
+    <!-- ================= Video container ====================== -->
+    <div class="demo-container">
+      <!-- Horizontal - for testing on computer -->
+      <!-- <video id="video" width="160" height="120" preload autoplay loop muted></video>
+      <canvas id="canvas" width="160" height="120"></canvas> -->
+      <!-- <video id="video" width="320" height="240" preload autoplay loop muted></video> -->
+      <!-- <canvas id="canvas" width="320" height="240"></canvas> -->
+      
+      <!-- Vertical - for viewing on phone -->
+      <video id="video" width="100" height="100" preload autoplay loop muted></video>
+      <canvas id="canvas" width="100" height="100"></canvas>
+      <!-- <video id="video" width="240" height="320" preload autoplay loop muted></video> -->
+      <!-- <canvas id="canvas" width="240" height="320"></canvas> -->
+    </div>
+
+    <!-- ======================= A-Frame ========================= -->
+
+    <a-scene>
+      <!-- Assets -->
+      <a-assets>
+        <a-asset-item id="test-obj" src="assets/pistol/Pistol.obj"></a-asset-item>
+        <a-asset-item id="test-mtl" src="assets/pistol/Pistol.mtl"></a-asset-item>
+
+        <a-asset-item id="room-obj" src="assets/room/zigzag-room.obj"></a-asset-item>
+        <a-asset-item id="room-mtl" src="assets/room/zigzag-room.mtl"></a-asset-item>
+        <img id="sky" src="assets/room/SKY1.PNG" alt="">
+        <img id="enemy-human" src="assets/POSSE1.PNG" alt="">
+        <img id="enemy-brown" src="assets/TROOA1.PNG" alt="">
+        <!-- <a-asset-item id="sky" src="assets/room/SKY1.PNG"></a-asset-item> -->
+        <!-- <a-asset-item id="test-obj" src="assets/test-tex.obj"></a-asset-item>
+        <a-asset-item id="test-mtl" src="assets/test-tex.mtl"></a-asset-item> -->
+        
+        
+        
+        <!-- Laser. -->
+        <a-mixin id="laser"
+                 geometry="primitive: cylinder; radius: 0.05; translate: 0 -1 -0.3"
+                 material="color: red; metalness: 0.2; opacity: 0.8; roughness: 0.3"
+                 rotation="270 0 0"
+                 projectile="speed: -0.5"
+                 collider="target: .enemy"></a-mixin>
+      </a-assets>
+      <!-- End Assets -->
+      
+      <!-- Enemies -->
+      <a-image look-at="#player" src="#enemy-human" transparent="true" 
+               position="1 1.3 -3.5" scale="1.5 1.5 1.5"></a-image>
+      <a-image look-at="#player" src="#enemy-human" transparent="true" 
+               position="-3 1.3 -6.5" scale="1.5 1.5 1.5"></a-image>
+      <a-image look-at="#player" src="#enemy-brown" transparent="true" 
+               position="-5 4.0 -9.5" scale="1.5 1.5 1.5"></a-image>
+      
+      <!-- Other -->
+      <a-entity id="gun" obj-model="obj: #test-obj; mtl: #test-mtl" 
+                rotation="0 180 0" 
+                position="0 1 -1"
+                spawner="mixin: laser; on: click" 
+                click-listener></a-entity>
+      <a-entity id="room" obj-model="obj: #room-obj; mtl: #room-mtl" material="shader: flat" rotation="0 90 0" position="-1 0.4 -4.5" scale="2.5 2.5 2.5"></a-entity>
+      <a-entity template="src: #enemies" data-num="10"></a-entity>
+      <!-- Add spawner and click-listener to player. -->
+
+      <a-camera id="player" position="0 1.8 0"></a-camera>
+      <a-sky color="#252243"></a-sky>
+      <a-entity geometry="primitive: sphere; radius: 1000"
+          material="src: #sky"
+          scale="1 1 -1"></a-entity>
+      <a-entity light="type: ambient; color: #ccc"></a-entity>
+    </a-scene>
+
+  </body>
+</html>
