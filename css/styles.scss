@@ -1,0 +1,156 @@
+body {
+  background: url('../img/white_wall_hash.png');
+}
+
+.max-width {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.short-width {
+  max-width: 600px;
+}
+
+.width100p {
+  width: 100%;
+}
+
+/* --------------- */
+/*      Header     */
+/* --------------- */
+
+.header {
+  // float: left;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+
+.top-text {
+  margin: 50px 0 100px 0;
+  h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    letter-spacing: 5pt;
+  }
+  h5 {
+    font-family: 'Raleway', sans-serif;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* --------------- */
+/*     Profile     */
+/* --------------- */
+
+.profile {
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.img-circle {
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+
+/* --------------- */
+/*     Projects    */
+/* --------------- */
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  margin-bottom: 100px;
+}
+
+.projects {
+  margin: 5px;
+  color: #4c4c4c;
+}
+
+// Front & Back Tiles
+.front img {
+  width: 310px;
+}
+.flip-container, .front, .back {
+  width: 310px;
+  height: 232px;
+}
+
+.front-title {
+  font-family: 'Raleway', sans-serif;
+  height: 100%;
+  vertical-align: center;
+  h3 {
+    padding-top: 25%;
+    font-weight: 100;
+  }
+}
+
+.project-title {
+  h1 {
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+.subtitle {
+  margin-top: 70px;
+  p {
+    font-size: 10pt;
+    margin: 0 10px;
+  }
+}
+
+// Inside the project page
+.project-img-parent {
+  width: inherit;
+}
+
+.project-img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+}
+
+
+/* --------------- */
+/*     Effects     */
+/* --------------- */
+
+
+// Drop shadows for the projects
+.flipper {
+  .front {
+    -webkit-filter: drop-shadow(5px 5px 3px rgba(0,0,0,0.2)) !important;
+    filter: drop-shadow(5px 5px 3px rgba(0,0,0,0.2)) !important;
+  }
+  .back {
+    -webkit-filter: drop-shadow(5px 5px 3px rgba(0,0,0,0.1)) !important;
+    filter: drop-shadow(5px 5px 3px rgba(0,0,0,0.1)) !important;
+  }
+}
+
+// Greyscale images - color when hovered on
+.front {
+  img {
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    -moz-filter: grayscale(0.5);
+    -webkit-filter: grayscale(0.5);
+    filter: grayscale(0.5);
+    &:hover {
+      -webkit-transition: .2s ease-in-out;
+      -moz-transition: .2s ease-in-out;
+      -o-transition: .2s ease-in-out;
+      -moz-filter: grayscale(0);
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+    }
+  }
+}
+
