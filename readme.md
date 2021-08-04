@@ -10,7 +10,7 @@ Feel free to play with different directives and style the site appropriately.
 * http://rachelfourquet.com/theoffice
 
 ##Getting Started
-
+* Use Node v10.23.1 (using nvm)
 * Fork and clone this repository
 * Run `npm install` to install dependencies
   * `npm start` - start the BrowserSync server

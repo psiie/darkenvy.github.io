@@ -169,11 +169,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
       templateUrl: 'views/contact.html',
       controller: 'ContactCtrl'
     })
-    .state('about', {
-      url: '/about',
-      templateUrl: 'views/about.html',
-      controller: 'AboutCtrl'
-    })
+    // .state('about', {
+    //   url: '/about',
+    //   templateUrl: 'views/about.html',
+    //   controller: 'AboutCtrl'
+    // })
 
 
 }])
